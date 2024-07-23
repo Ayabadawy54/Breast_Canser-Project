@@ -1,0 +1,208 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Predict</title>
+{% endblock %}
+
+
+{% block body %}
+<br>
+<h2>Predict</h2>
+<hr>
+<br>
+
+<form action="/predict" , method="POST">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="rm">radius_mean</label>
+            <input class="form-control" type="number" , step="0.0001" name="rm" id="rm"
+             placeholder="Enter radius_mean"
+                aria-label="Enter radius_mean">
+            <small id="rmhelp" class="form-text text-muted">This Field is required.</small>
+            <br>
+
+            <label for="tm">texture_mean</label>
+            <input class="form-control" type="number" , step="0.0001" name="tm" id="tm"
+                placeholder="Enter texture_mean" aria-label="Enter texture_mean">
+            <small id="tmhelp" class="form-text text-muted">This Field is required.</small>
+            <br>
+
+            <label for="pm">perimeter_mean</label>
+            <input class="form-control" type="number" , step="0.0001" name="pm" id="pm"
+                placeholder="Enter perimeter_mean" aria-label="Enter perimeter_mean">
+            <small id="pmhelp" class="form-text text-muted">This Field is required.</small>
+            <br>
+
+            <label for="am">area_mean</label>
+            <input class="form-control" type="number" , step="0.0001" name="am" id="am"
+                placeholder="Enter area_mean" aria-label="Enter area_mean">
+            <small id="amhelp" class="form-text text-muted">This Field is required.</small>
+            <br>
+            
+            <label for="sm">smoothness_mean</label>
+            <input class="form-control" type="number" , step="0.0001" name="sm" id="sm"
+                placeholder="Enter smoothness_mean" aria-label="Enter smoothness_mean">
+            <small id="smhelp" class="form-text text-muted">This Field is required.</small>
+            <br>
+
+            <label for="cm">compactness_mean</label>
+            <input class="form-control" type="number" , step="0.0001" name="cm" id="cm" placeholder="Enter compactness_mean"
+                aria-label="Entercompactness_mean">
+            <small id="cmhelp" class="form-text text-muted">This Field is required.</small>
+            <br>
+
+            <label for="cmn">concavity_mean</label>
+            <input class="form-control" type="number" , step="0.0001" name="cmn" id="cmn" placeholder="Enter concavity_mean"
+                aria-label="Enter concavity_mean">
+            <small id="cmnhelp" class="form-text text-muted">This Field is required.</small>
+            <br>
+
+            <label for="cpm">concave points_mean</label>
+            <input class="form-control" type="number" , step="0.0001" name="cpm" id="cpm"
+                placeholder="Enter concave points_mean" aria-label="Enter concave points_mean">
+            <small id="cpmhelp" class="form-text text-muted">This Field is required.</small>
+            <br>
+
+            <label for="smm">symmetry_mean</label>
+            <input class="form-control" type="number" , step="0.0001" name="smm" id="smm"
+                placeholder="Enter Median symmetry_mean" aria-label="Enter Median symmetry_mean">
+            <small id="smmhelp" class="form-text text-muted">This Field is required.</small>
+            <br> 
+
+            <label for="fdm">fractal_dimension_mean</label>
+            <input class="form-control" type="number" , step="0.0001" name="fdm" id="fdm"
+                placeholder="Enter fractal_dimension_mean" aria-label="Enter fractal_dimension_mean">
+            <small id="fractal_dimension_mean" class="form-text text-muted">This Field is required.</small>
+            <br>
+
+            <label for="rs">radius_se</label>
+            <input class="form-control" type="number" , step="0.0001" name="rs" id="rs"
+                placeholder="Enter radius_se" aria-label="Enter radius_se">
+            <small id="rshelp" class="form-text text-muted">This Field is required.</small>
+            <br>
+
+            <label for="ts">texture_se</label>
+            <input class="form-control" type="number" , step="0.0001" name="ts" id="ts"
+                placeholder="Enter texture_se" aria-label="Enter texture_se">
+            <small id="tshelp" class="form-text text-muted">This Field is required.</small>
+            <br>
+       
+            <label for="ps">perimeter_se</label>
+            <input class="form-control" type="number" , step="0.0001" name="ps" id="ps"
+                placeholder="Enter perimeter_se" aria-label="Enter perimeter_se">
+            <small id="pshelp" class="form-text text-muted">This Field is required.</small>
+            <br>
+
+            <label for="ase">area_se</label>
+            <input class="form-control" type="number" , step="0.0001" name="ase" id="ase"
+                placeholder="Enter area_se" aria-label="Enter area_se">
+            <small id="asehelp" class="form-text text-muted">This Field is required.</small>
+            <br>
+
+            <label for="sse">smoothness_se</label>
+            <input class="form-control" type="number" , step="0.0001" name="sse" id="sse"
+                placeholder="Enter smoothness_se" aria-label="Entersmoothness_se">
+            <small id="ssehelp" class="form-text text-muted">This Field is required.</small>
+            <br>
+
+            <label for="cse">compactness_s</label>
+            <input class="form-control" type="number" , step="0.0001" name="cse" id="cse"
+                placeholder="Enter compactness_se" aria-label="Enter  compactness_se">
+            <small id="csehelp" class="form-text text-muted">This Field is required.</small>
+            <br>
+
+            <label for="cs">concavity_se</label>
+            <input class="form-control" type="number" , step="0.0001" name="cs" id="cs"
+                placeholder="Enter concavity_se" aria-label="Enter concavity_se">
+            <small id="cshelp" class="form-text text-muted">This Field is required.</small>
+            <br>
+
+            <label for="cps">concave points_se</label>
+            <input class="form-control" type="number" , step="0.0001" name="cps" id="cps"
+                placeholder="Enter concave points_se" aria-label="Enter concave points_se">
+            <small id="cpshelp" class="form-text text-muted">This Field is required.</small>
+            <br>
+
+            <label for="ss"> symmetry_se</label>
+            <input class="form-control" type="number" , step="0.0001" name="ss" id="ss"
+                placeholder="Enter  symmetry_se" aria-label="Enter  symmetry_se">
+            <small id="sshelp" class="form-text text-muted">This Field is required.</small>
+            <br>
+
+            <label for="fds">fractal_dimension_se</label>
+            <input class="form-control" type="number" , step="0.0001" name="fds" id="fds"
+                placeholder="Enterfractal_dimension_se" aria-label="Enter fractal_dimension_se">
+            <small id="fdshelp" class="form-text text-muted">This Field is required.</small>
+            <br>
+
+            <label for="rw">radius_worst</label>
+            <input class="form-control" type="number" , step="0.0001" name="rw" id="rw"
+                placeholder="Enter radius_worst" aria-label="Enter radius_worst">
+            <small id="rwhelp" class="form-text text-muted">This Field is required.</small>
+            <br>
+
+            <label for="tw"> texture_worst</label>
+            <input class="form-control" type="number" , step="0.0001" name="tw" id="tw"
+                placeholder="Enter texture_worst" aria-label="Enter  texture_worst">
+            <small id="twhelp" class="form-text text-muted">This Field is required.</small>
+            <br>
+
+            <label for="pw">perimeter_worst</label>
+            <input class="form-control" type="number" , step="0.0001" name="pw" id="pw"
+                placeholder="Enter perimeter_worst" aria-label="Enter perimeter_worst">
+            <small id="pwhelp" class="form-text text-muted">This Field is required.</small>
+            <br>
+
+            <label for="aw">area_worst</label>
+            <input class="form-control" type="number" , step="0.0001" name="aw" id="aw"
+                placeholder="Enter area_worst" aria-label="Enter area_worst">
+            <small id="awhelp" class="form-text text-muted">This Field is required.</small>
+            <br>
+
+            <label for="sow">smoothness_worst</label>
+            <input class="form-control" type="number" , step="0.0001" name="sow" id="sow"
+                placeholder="Enter smoothness_worst" aria-label="Enter smoothness_worst">
+            <small id="sowhelp" class="form-text text-muted">This Field is required.</small>
+            <br>
+
+            <label for="cow">compactness_worst</label>
+            <input class="form-control" type="number" , step="0.0001" name="cow" id="cow"
+                placeholder="Enter compactness_worst" aria-label="Enter compactness_worst">
+            <small id="cowhelp" class="form-text text-muted">This Field is required.</small>
+            <br>
+
+            <label for="cw"> concavity_worst</label>
+            <input class="form-control" type="number" , step="0.0001" name="cw" id="cw"
+                placeholder="Enter  concavity_worst" aria-label="Enter  concavity_worst">
+            <small id="cw" class="form-text text-muted">This Field is required.</small>
+            <br>
+
+            <label for="cpw">concave points_worst</label>
+            <input class="form-control" type="number" , step="0.0001" name="cpw" id="cpw"
+                placeholder="Enter concave points_worst" aria-label="Enter concave points_worst">
+            <small id="cpwhelp" class="form-text text-muted">This Field is required.</small>
+            <br>
+
+            <label for="sw">symmetry_worst</label>
+            <input class="form-control" type="number" , step="0.0001" name="sw" id="sw"
+                placeholder="Enter symmetry_worst" aria-label="Enter symmetry_worst">
+            <small id="swhelp" class="form-text text-muted">This Field is required.</small>
+            <br>
+
+            <label for="fdw">fractal_dimension_worst</label>
+            <input class="form-control" type="number" , step="0.0001" name="fdw" id="fdw"
+                placeholder="Enter fractal_dimension_worst" aria-label="Enter fractal_dimension_worst">
+            <small id="fdwhelp" class="form-text text-muted">This Field is required.</small>
+            <br>
+
+            
+            
+            <input class="btn btn-dark btn-lg btn-block" type="submit" value="Predict">
+            <hr>
+            <h5> The Diagnosis is :{{ pred_val }}</h5>
+            <h5> Note: </h5>
+            <h5>['M'] for Malignant and ['B'] for Benign.</h5>
+        </div>
+</form>
+
+{% endblock %}
